@@ -1,0 +1,68 @@
+Mongoose is ODM ( Object Document Mapper )
+
+MongoDB Document <-> JS object
+
+Mongoose helps us in project building
+
+-> built in type casting
+-> validation
+-> query building ( Object)
+
+Mongoose Schema provide us the inbuilt validation
+
+name -> String
+age -> Number
+course -> String
+
+In Actual code its a json format
+
+new mongoose.Schema({
+    name: String,
+    age: Number,
+    course: String
+});
+
+Mongoose helps in providing the inbuilt validation
+
+name -> String -> required-> empty-> empty
+age -> Number -> empty-> >=18 -> default:18
+course -> String -> required-> empty-> empty
+
+
+code implementation
+
+Validations:- 
+
+new mongoose.Schema({
+    name: {type: String,required:true},
+    age: {type:Number,default:18,min:18},
+    course: {type: String,required:true}
+});
+
+Connecting MongoDB using Mongoose
+
+-> npm init -y
+-> npm install mongoose
+
+
+// Get API 
+server.get("/students",async(req,res)=>{
+    const data= await Student.find({},{_id:0})
+    res.status(200).send({
+        status: 'success',
+        data:data
+    })
+
+})
+
+
+// POST API
+server.post("/students",async(req,res)=>{
+    const data = new Student({name:req.query.name,age:req.query.age,subject:req.query.subject});
+    data.save().then((data) => {
+        res.status(201).send(data);
+    }).catch((error) => {
+        res.status(400).send(error);
+    })
+})
+
