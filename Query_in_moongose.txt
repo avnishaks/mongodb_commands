@@ -1,0 +1,24 @@
+Other queries in Mongoose
+
+Student: Collection_name
+
+Count -> Student.find({}).count()
+
+Sort -> Student.find({}).sort("name") -> sorts the docs by name field ascending sort order
+        Student.find({}).sort("-name") -> sorts the docs by name field descending sort order
+
+Limit -> Student.find({}).limit(4) -> to show the limit of 4 data from the top
+
+Skip-> Student.find({}).limit(5).skip(4) -> to skip the 4 doc and show the next 5 doc
+
+Distinct -> Student.find({}).distinct("name") -> Distinct value in an array
+
+
+Query chaning when we query for the multiple fields
+
+Student.find({}).limit(4).sort("name").exec(function(err,result) {
+    res.json(result)
+})
+
+
+
