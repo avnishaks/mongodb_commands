@@ -1,0 +1,32 @@
+Just Like Join in SQL we have Mongoose Populate in the Mongoose database
+
+
+StudentSchema
+
+name : String
+age : Number
+course : REF (ObjectID)
+
+
+CourseSchema
+
+id:1 (StudentSchema id)
+name:mongodb
+hours:40
+
+
+With Query Populate all the feild of CourseSchema linked with the course of StudentSchema
+
+{
+    objectID:1427272,
+    name:"John",
+    age:12,
+    course:{
+        objectID:1427,
+        name:mongodb,
+        hours:40
+    }
+}
+
+
+
