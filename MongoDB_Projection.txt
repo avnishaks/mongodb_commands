@@ -36,7 +36,7 @@ db.students.find({},{name:1})
   { _id: ObjectId("645f598d08db0552517fdf05"), name: 'raj' }
 ]
 
-To remove id we have to explicitly pass _id=1
+To remove id we have to explicitly pass _id=0
 
 Query :- db.students.find({},{name:1,_id:0})
 
