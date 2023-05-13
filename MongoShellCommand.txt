@@ -1,0 +1,39 @@
+
+Installation is done through the command line "brew install mongodb-community@6.0"
+To run the mongo shell we user "mongosh" command on terminal
+
+
+Basics of Mongo Shell Command:- 
+Create , Read , Update and Delete
+
+1. Create the database and insert the value
+List of the database is shown
+Switch to the database -> user database_name 
+insert the value -> ( db.collection_name.insertOne({name:"avnish",age:26}))
+
+
+2. Read the value of the database
+-> To view all the list of the value  [ db.collection_name.find()]
+-> To view list of value based on filter [ db.collection_name.find({name:"avnish"})]
+-> To view list of value based on filter greater than or less than [ db.students.find({age:{$lt:10}})
+$lt -> less than and $gt -> greater than
+
+
+3. Update the value of the database
+
+-> To update the particular json array of particular objectID
+db.collection_name.updateOne({name:"Neha"},{$set:{age:98}})
+-> Multiple update to the database
+db.students.updateMany({name:"Shreya"},{$set:{name:"Arti"}})
+if we use updateOne here then the First inserted element matching Shreya is gets updated
+
+For the bulk update
+db.students.bulkWrite[{updateMany:{filter:{name:"Prena"},update:{$set:{age:20}}}]
+
+
+4. Delete the value of the database
+-> To delete the value of the database 
+db.students.deleteOne({name:"Kumar"}) -> name kumar gets deleted
+
+
+
