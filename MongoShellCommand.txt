@@ -28,6 +28,7 @@ db.students.updateMany({name:"Shreya"},{$set:{name:"Arti"}})
 if we use updateOne here then the First inserted element matching Shreya is gets updated
 
 For the bulk update
+student-> collection_name
 db.students.bulkWrite[{updateMany:{filter:{name:"Prena"},update:{$set:{age:20}}}]
 
 
