@@ -1,0 +1,6 @@
+student=> collection_name
+
+1. insertMany use the format of the taking the value of data in the form of the array
+
+db.students.insertMany([{"name":"ajay","age":35,"subject":"mongo"},{"name":"raj","age":35,"subject":"node"}])
+
