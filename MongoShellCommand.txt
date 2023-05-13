@@ -4,7 +4,10 @@ To run the mongo shell we user "mongosh" command on terminal
 
 
 Basics of Mongo Shell Command:- 
-Create , Read , Update and Delete
+Create => insertOne() | insertMany()
+Read => find() | findOne()
+Update => updateOne() | updateMany()
+Delete => deleteOne() | deleteMany()
 
 1. Create the database and insert the value
 List of the database is shown
