@@ -1,0 +1,21 @@
+Rest API
+
+1. Create
+-> POST -> Data in Request Body -> /students
+
+
+2. Read
+-> GET -> Find Data in URL params -> /students/:id
+-> GET-> No Data -> /students
+
+3. Update
+-> PUT -> Find Data in URL params -> /students/:id
+      -> Update Data in req body -> /students/:id
+
+Delete
+-> DELETE -> Find Data in URL params -> /students/:id
+
+
+In case of :id we can create a custom value for id ( roll no , reg no or mobile number) , but in 
+case of NoSQL database mongoDB we can use the ObjectID 
+
