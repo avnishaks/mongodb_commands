@@ -1,0 +1,57 @@
+MongoDB Project :- It help us to get the value what is needed from the database
+
+0 -> Means don't display the particular value in the database
+1 -> display the value in the database
+
+Query : db.students.find({name:'ajay'},{name:0,_id=1,age:0})
+
+NOTES :- 
+_id : inclusive and exclusive is not required for id ,
+db.students.find({},{name:1,age:0}) -> it throw exception
+ Cannot do exclusion on field age in inclusion projection
+
+Output :- [ { _id: ObjectId("645f598d08db0552517fdf04"), subject: 'mongo' } ]
+
+age and name is set to 0 which means don't display it , _id =1 means to show it , while  no 
+constraint on subject so it will be displayed
+
+
+if we put the constraint as 1 only then other will be hide , but to hide the _id we have to pass 
+_id =0
+
+if name:1 
+
+db.students.find({},{name:1})
+
+[
+  { _id: ObjectId("645f4aa6c1bcd6e0d1acf91b"), name: 'Avnish' },
+  { _id: ObjectId("645f4b1ec1bcd6e0d1acf91d"), name: 'Pooja' },
+  { _id: ObjectId("645f4b29c1bcd6e0d1acf91e"), name: 'Prena' },
+  { _id: ObjectId("645f4b32c1bcd6e0d1acf91f"), name: 'Neha' },
+  { _id: ObjectId("645f4b4cc1bcd6e0d1acf920"), name: 'Prena' },
+  { _id: ObjectId("645f4b53c1bcd6e0d1acf921"), name: 'Arti' },
+  { _id: ObjectId("645f58ff08db0552517fdf02"), name: 'abc' },
+  { _id: ObjectId("645f593108db0552517fdf03"), name: 'def' },
+  { _id: ObjectId("645f598d08db0552517fdf04"), name: 'ajay' },
+  { _id: ObjectId("645f598d08db0552517fdf05"), name: 'raj' }
+]
+
+To remove id we have to explicitly pass _id=1
+
+Query :- db.students.find({},{name:1,_id:0})
+
+Output :
+ [
+  { name: 'Avnish' },
+  { name: 'Pooja' },
+  { name: 'Prena' },
+  { name: 'Neha' },
+  { name: 'Prena' },
+  { name: 'Arti' },
+  { name: 'abc' },
+  { name: 'def' },
+  { name: 'ajay' },
+  { name: 'raj' }
+]
+
+
